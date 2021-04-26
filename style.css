@@ -1,4 +1,17 @@
 /* awards are 16px x 16px on reddit website */
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #778899;
+}
+
+.post {
+    background-color: white;
+    border-radius: 12px;
+    padding: 4px;
+    display: flex;
+}
+
+.award {
+    height: 16px;
+    width: 16px;
 }

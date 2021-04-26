@@ -11,6 +11,8 @@ const parentEl = document.getElementById("postParent");
 for (let child of data.data.children) {
     const postDiv = document.createElement("div");
 
+    const postTop = document.createElement("div");
+
     const thumbnail = document.createElement("img");
 
     const postTitle = document.createElement("p");
@@ -26,20 +28,24 @@ for (let child of data.data.children) {
     const top4Award = child.data.all_awardings.slice(0, 4);
     console.log(top4Award);
 
-    // for (let medal of top4Award) {
-    //     const award = document.createElement("img");
-    //     award.setAttribute("src", medal.icon_url);
-    //     postAwards.classList.add("awards");
-    //     postAwards.appendChild(award);
-    //     postDiv.appendChild(postAwards);
-    // }
+    for (let medal of top4Award) {
+        const award = document.createElement("img");
+        award.setAttribute("src", medal.icon_url);
+        postAwards.classList.add("awards");
+        award.classList.add("award");
+        postAwards.appendChild(award);
+        postTop.appendChild(postAwards);
+    }
 
     postDiv.classList.add("post");
     parentEl.appendChild(postDiv);
 
-    postAuthor.innerText = child.data.author;
+    postTop.classList.add("posthead");
+    postDiv.appendChild(postTop);
+
+    postAuthor.innerText = "Posted by " + child.data.author;
     postAuthor.classList.add("author");
-    postDiv.appendChild(postAuthor);
+    postTop.appendChild(postAuthor);
 
     postTitle.innerText = child.data.title;
     postTitle.classList.add("title");
