@@ -13,6 +13,8 @@ for (let child of data.data.children) {
 
     const postTop = document.createElement("div");
 
+    const postBody = document.createElement("div");
+
     const thumbnail = document.createElement("img");
 
     const postTitle = document.createElement("p");
@@ -34,6 +36,9 @@ for (let child of data.data.children) {
     postTop.classList.add("posthead");
     postDiv.appendChild(postTop);
 
+    postBody.classList.add("postBody");
+    postDiv.appendChild(postBody);
+
     postAuthor.innerText = "Posted by " + child.data.author;
     postAuthor.classList.add("author");
     postTop.appendChild(postAuthor);
@@ -49,19 +54,19 @@ for (let child of data.data.children) {
 
     postTitle.innerText = child.data.title;
     postTitle.classList.add("title");
-    postDiv.appendChild(postTitle);
+    postBody.appendChild(postTitle);
 
     if (child.data.thumbnail === "default") {
         thumbnail.remove();
     } else {
         thumbnail.setAttribute("src", child.data.thumbnail);
         thumbnail.classList.add("thumbnail");
-        postDiv.appendChild(thumbnail);
+        postBody.appendChild(thumbnail);
     }
 
     postLink.setAttribute("href", url);
     postLink.innerText = "See this post on Reddit."
     postLink.classList.add("link");
-    postDiv.appendChild(postLink);
+    postBody.appendChild(postLink);
 }
 });
