@@ -29,29 +29,33 @@ for (let child of data.data.children) {
     // for (let medal of top4Award) {
     //     const award = document.createElement("img");
     //     award.setAttribute("src", medal.icon_url);
+    //     postAwards.classList.add("awards");
     //     postAwards.appendChild(award);
     //     postDiv.appendChild(postAwards);
     // }
 
+    postDiv.classList.add("post");
     parentEl.appendChild(postDiv);
 
     postAuthor.innerText = child.data.author;
+    postAuthor.classList.add("author");
     postDiv.appendChild(postAuthor);
 
     postTitle.innerText = child.data.title;
+    postTitle.classList.add("title");
     postDiv.appendChild(postTitle);
 
     if (child.data.thumbnail === "default") {
         thumbnail.remove();
     } else {
         thumbnail.setAttribute("src", child.data.thumbnail);
+        thumbnail.classList.add("thumbnail");
         postDiv.appendChild(thumbnail);
     }
 
     postLink.setAttribute("href", url);
     postLink.innerText = "See this post on Reddit."
+    postLink.classList.add("link");
     postDiv.appendChild(postLink);
-
-
 }
 });
