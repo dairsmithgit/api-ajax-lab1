@@ -9,15 +9,47 @@ body {
     border-radius: 12px;
     padding: 4px;
     margin: 4px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .posthead {
-    font-size: 12px;
+    font-size: 10px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: left;
+    padding: 4px;
+}
+
+.postbody {
+    display: flex;
+    flex-direction: column;
 }
 
 .award {
     height: 16px;
     width: 16px;
+    flex-wrap: nowrap;
+}
+
+.link {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 8px;
+    text-decoration: none;
+}
+
+.thumbnail {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    align-items: right;
+}
+
+.title {
+    margin: 0;
+}
+
+.author {
+    margin: 0;
 }
